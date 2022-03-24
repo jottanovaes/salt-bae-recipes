@@ -118,24 +118,18 @@ export const fetchRandomRecipe = async (path, callback) => {
 export const fetchAllMeals = async (callback) => {
   const endpoint = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
   const { meals } = (await (await fetch(endpoint)).json());
-  // console.log(meals);
-  // setFetchResult
   callback((prevState) => ({ ...prevState, meals }));
 };
 
 export const fetchNationalitiesOptions = async (callback) => {
   const endpoint = 'https://www.themealdb.com/api/json/v1/1/list.php?a=list';
   const { meals } = (await (await fetch(endpoint)).json());
-  // console.log(meals);
-  // setOptionsList -> filtro
   callback(meals);
 };
 
 export const fetchByNationality = async (nationality, callback) => {
   const endpoint = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${nationality}`;
   const { meals } = (await (await fetch(endpoint)).json());
-  // console.log(meals);
-  // callback = setFetchResult
   callback((prevState) => ({ ...prevState, meals }));
 };
 
