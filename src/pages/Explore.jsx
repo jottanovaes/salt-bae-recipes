@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { StartBtn } from '../components/style';
+import { ExplorerContainer } from './style';
 
 export default function Explore() {
   const history = useHistory();
@@ -9,22 +11,22 @@ export default function Explore() {
   return (
     <>
       <Header title="Explore" />
-      <main>
-        <button
+      <ExplorerContainer>
+        <StartBtn
           type="button"
           data-testid="explore-foods"
           onClick={ () => history.push('/explore/foods') }
         >
           Explore Foods
-        </button>
-        <button
+        </StartBtn>
+        <StartBtn
           type="button"
           data-testid="explore-drinks"
           onClick={ () => history.push('/explore/drinks') }
         >
           Explore Drinks
-        </button>
-      </main>
+        </StartBtn>
+      </ExplorerContainer>
       <Footer page="explore" />
     </>
   );

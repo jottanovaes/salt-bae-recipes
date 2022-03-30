@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router';
 import { fetchRandomRecipe } from '../services/search';
+import { ExplorerContainer } from '../pages/style';
+import { StartBtn } from './style';
 
 const ExploreBtnsSection = ({ type }) => {
   const [recipeId, setRecipeId] = useState('');
@@ -12,15 +14,15 @@ const ExploreBtnsSection = ({ type }) => {
   }, [type]);
 
   return (
-    <section>
-      <button
+    <ExplorerContainer>
+      <StartBtn
         type="button"
         data-testid="explore-by-ingredient"
         onClick={ () => history.push(`/explore/${type}/ingredients`) }
       >
         By Ingredient
-      </button>
-      <button
+      </StartBtn>
+      <StartBtn
         type="button"
         data-testid="explore-surprise"
         onClick={ () => {
@@ -28,18 +30,18 @@ const ExploreBtnsSection = ({ type }) => {
         } }
       >
         Surprise me!
-      </button>
+      </StartBtn>
       { (type === 'foods')
     && (
-      <button
+      <StartBtn
         type="button"
         data-testid="explore-by-nationality"
         onClick={ () => history.push('/explore/foods/nationalities') }
       >
         By Nationality
-      </button>
+      </StartBtn>
     )}
-    </section>
+    </ExplorerContainer>
   );
 };
 

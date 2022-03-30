@@ -24,6 +24,8 @@ export const StyledHeader = styled.header`
   position: sticky;
   background-color: white;
   top: 0;
+  text-align: center;
+  padding: 0 2rem;
 `;
 export const StyledFotter = styled.footer`
   padding-top: 10px;
@@ -51,7 +53,7 @@ export const StyledImg = styled.img`
 export const Input = styled.input`
   background-color: white;
   border-radius: 4px;
-  border: 0.1rem solid rgba(0, 0, 0, 0.11);
+  border: 0.1rem solid rgba(0, 0, 0, 0.33);
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-size: 1rem;
@@ -61,14 +63,9 @@ export const Input = styled.input`
 
   &::placeholder {
     padding-left: ${(props) => (props.searchBar ? '0.5rem' : '1rem')};
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
   }
 
   &:focus {
-    border: 0.1rem solid rgba(0, 0, 0, 0.11);
-    font-family: 'Roboto', sans-serif;
-    font-weight: normal;
     padding-left: 1rem;
   }
 `;
@@ -175,9 +172,9 @@ export const StartBtn = styled.button`
   background-color: ${(props) => (props.name !== 'Finish' ? '#2591ff' : '#952020')};
   color: white;
   font-family: 'Advent Pro', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.25rem;
-  letter-spacing: 0.01rem;
+  letter-spacing: 0.02rem;
   &:disabled {
     background-color: #5c3131;
   }
@@ -354,4 +351,22 @@ export const ImgCarousel = styled.img`
   padding: 0;
   top: 0;
   width: 100%;
+`;
+
+export const SelectNationality = styled.select`
+  width: 75%;
+  height: 3rem;
+  background-color: white;
+  border-radius: 4px;
+  border: 0.1rem solid rgba(0, 0, 0, 0.33);
+  padding: 0.5rem;
+  color: #4d4d4d;
+`;
+
+export const SelectContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
 `;

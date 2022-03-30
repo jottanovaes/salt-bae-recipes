@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { IngrendItem } from '../pages/style';
 
 export default function Ingredient({ index, name, type }) {
   const src = {
@@ -14,14 +15,18 @@ export default function Ingredient({ index, name, type }) {
     <Link
       to={ { pathname: `/${drinkOrFoods}`, state: name } }
     >
-      <div data-testid={ `${index}-ingredient-card` }>
+      <IngrendItem data-testid={ `${index}-ingredient-card` }>
         <img
           src={ src[type] }
           alt={ `Ingredient - ${name}` }
           data-testid={ `${index}-card-img` }
         />
-        <p data-testid={ `${index}-card-name` }>{name}</p>
-      </div>
+        <span
+          data-testid={ `${index}-card-name` }
+        >
+          {name}
+        </span>
+      </IngrendItem>
     </Link>
   );
 }

@@ -5,6 +5,7 @@ import {
   fetchByNationality,
   fetchNationalitiesOptions,
 } from '../services/search';
+import { SelectContainer, SelectNationality } from './style';
 
 export default function Dropdown() {
   const [selected, setSelected] = useState('all');
@@ -41,22 +42,24 @@ export default function Dropdown() {
     ));
 
     return (
-      <select
-        data-testid="explore-by-nationality-dropdown"
-        value={ selected }
-        onChange={ (e) => {
-          setSelected(e.target.value);
-        } }
-      >
-        <option
-          data-testid="All-option"
-          name="nationality"
-          value="all"
+      <SelectContainer>
+        <SelectNationality
+          data-testid="explore-by-nationality-dropdown"
+          value={ selected }
+          onChange={ (e) => {
+            setSelected(e.target.value);
+          } }
         >
-          All
-        </option>
-        { options }
-      </select>
+          <option
+            data-testid="All-option"
+            name="nationality"
+            value="all"
+          >
+            All
+          </option>
+          { options }
+        </SelectNationality>
+      </SelectContainer>
     );
   };
 

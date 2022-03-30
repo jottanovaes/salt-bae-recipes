@@ -4,6 +4,7 @@ import RecipesContext from '../Context/context';
 import Ingredient from '../components/Ingredient';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { IngredientsList } from './style';
 
 const renderIngredients = (ingredients, type) => {
   const TWELVE = 12;
@@ -40,7 +41,7 @@ export default function Ingredients() {
   return (
     <div>
       <Header title="Explore Ingredients" />
-      {renderIngredients(ingredients, splitedPathName)}
+      <IngredientsList>{renderIngredients(ingredients, splitedPathName)}</IngredientsList>
       <Footer page={ mealsOrDrinks } />
     </div>
   );

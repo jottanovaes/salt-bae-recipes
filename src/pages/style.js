@@ -56,6 +56,44 @@ export const Input = styled.input`
   }
 `;
 
+export const ExplorerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+`;
+
+export const IngrendItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0px 1px 5px -4px black,
+  2px 1px 5px -4px black, -2px 1px 5px -4px black;
+  /* padding: 0.5rem 1rem; */
+  border-radius: 1rem;
+  width: 8rem;
+  height: 11rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+`;
+
+export const IngredientsList = styled.div`
+  margin-top: 1rem;
+  padding-bottom: 4rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+`;
+
 export const LoginBtn = styled.button`
   background-color: #c53f3f;
   border-radius: 4px;
